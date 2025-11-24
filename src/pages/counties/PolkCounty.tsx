@@ -3,7 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, CheckCircle, Shield, Clock, Users, Award, Star, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { motion } from "framer-motion";
+// Commented out framer-motion import to fix build error
+// import { motion } from "framer-motion";
 
 const PolkCounty = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -131,11 +132,8 @@ const PolkCounty = () => {
         </div>
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center text-white px-4 max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            {/* Replaced motion.div with regular div */}
+            <div>
               <MapPin className="h-16 w-16 mx-auto mb-6" />
               <h1 className="mb-6 text-5xl md:text-6xl font-bold">Mobile Home Services in Polk County</h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
@@ -154,7 +152,7 @@ const PolkCounty = () => {
                   </Button>
                 </Link>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -201,12 +199,10 @@ const PolkCounty = () => {
         
         <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
           {cities.map((city, index) => (
-            <motion.div
+            // Replaced motion.div with regular div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
+              className="transition-all duration-300 hover:-translate-y-1"
             >
               <Card className="text-center hover:shadow-lg transition-all duration-300">
                 <CardContent className="pt-6">
@@ -214,7 +210,7 @@ const PolkCounty = () => {
                   <h3 className="font-semibold">{city}</h3>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
         
@@ -306,12 +302,10 @@ const PolkCounty = () => {
           {activeTab === "overview" && (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <motion.div
+                // Replaced motion.div with regular div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
+                  className="transition-all duration-300 hover:-translate-y-1"
                 >
                   <Card className="h-full hover:shadow-lg transition-all duration-300">
                     <CardContent className="pt-6">
@@ -320,7 +314,7 @@ const PolkCounty = () => {
                       <p className="text-muted-foreground">{service.description}</p>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               ))}
             </div>
           )}
@@ -503,12 +497,10 @@ const PolkCounty = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <motion.div
+            // Replaced motion.div with regular div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
+              className="transition-all duration-300 hover:-translate-y-1"
             >
               <Card className="h-full hover:shadow-lg transition-all duration-300">
                 <CardContent className="pt-6 flex flex-col h-full">
@@ -527,7 +519,7 @@ const PolkCounty = () => {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
