@@ -3,7 +3,8 @@ import { MapPin, Phone, CheckCircle, Shield, Clock, Users, Award, ArrowRight, St
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { motion } from "framer-motion";
+// Commented out framer-motion import to fix build error
+// import { motion } from "framer-motion";
 
 const Counties = () => {
   const [selectedCounty, setSelectedCounty] = useState(null);
@@ -208,11 +209,8 @@ const Counties = () => {
         </div>
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center text-white px-4 max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            {/* Replaced motion.div with regular div */}
+            <div>
               <h1 className="mb-6 text-5xl md:text-6xl font-bold">Counties We Serve</h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
                 Professional mobile and manufactured home services across 8 Central Florida counties
@@ -229,7 +227,7 @@ const Counties = () => {
                   </Button>
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -301,12 +299,10 @@ const Counties = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {counties.filter(county => county.featured).map((county, index) => (
-              <motion.div
+              // Replaced motion.div with regular div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+                className="transition-all duration-300 hover:-translate-y-1"
               >
                 <Card className="overflow-hidden h-full hover:shadow-xl transition-all duration-300">
                   <div className="h-40 relative overflow-hidden">
@@ -336,7 +332,7 @@ const Counties = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -354,11 +350,10 @@ const Counties = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {counties.map((county, index) => (
-              <motion.div
+              // Replaced motion.div with regular div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="transition-all duration-300"
               >
                 <Card 
                   className={`overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer ${
@@ -424,7 +419,7 @@ const Counties = () => {
                     </div>
                   </div>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -451,12 +446,10 @@ const Counties = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <motion.div
+              // Replaced motion.div with regular div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+                className={`transition-all duration-300 hover:-translate-y-1 ${hoveredService === index ? 'bg-primary/5' : ''}`}
                 onMouseEnter={() => setHoveredService(index)}
                 onMouseLeave={() => setHoveredService(null)}
               >
@@ -469,7 +462,7 @@ const Counties = () => {
                     <p className="text-muted-foreground">{service.description}</p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -487,12 +480,10 @@ const Counties = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              // Replaced motion.div with regular div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+                className="transition-all duration-300 hover:-translate-y-1"
               >
                 <Card className="h-full hover:shadow-xl transition-all duration-300">
                   <CardContent className="pt-6 flex flex-col h-full">
@@ -521,7 +512,7 @@ const Counties = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -539,11 +530,10 @@ const Counties = () => {
           
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <motion.div
+              // Replaced motion.div with regular div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="transition-all duration-300"
               >
                 <Card className="hover:shadow-md transition-shadow">
                   <CardContent className="pt-6">
@@ -556,7 +546,7 @@ const Counties = () => {
                     <p className="text-muted-foreground ml-11">{faq.answer}</p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
