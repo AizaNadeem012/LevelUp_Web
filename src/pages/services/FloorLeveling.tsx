@@ -165,7 +165,7 @@ const FloorLeveling = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:+1 (386) 453-9277">
-                  <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3 text-lg gap-2">
+                  <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3 text-lg">
                     <Phone className="h-5 w-5" />
                     Call Us Now
                   </Button>
@@ -212,13 +212,6 @@ const FloorLeveling = () => {
               </li>
             </ul>
           </div>
-          <div className="relative h-96 rounded-lg overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=600" 
-              alt="Floor Leveling Process" 
-              className="w-full h-full object-cover"
-              onError={(e) => handleImageError(e, "https://picsum.photos/seed/floorprocess/600/400.jpg")}
-            />
           </div>
         </div>
       </section>
@@ -241,8 +234,7 @@ const FloorLeveling = () => {
                 <p className="text-muted-foreground text-center">{issue.description}</p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
         
         <div className="text-center">
           <p className="text-muted-foreground mb-4">Don't see your issue listed? Contact us for a comprehensive floor assessment.</p>
@@ -267,11 +259,11 @@ const FloorLeveling = () => {
               <div className="w-12 h-12 rounded-full bg-primary text-white font-bold text-xl flex items-center justify-center">
                 {step.step}
               </div>
-              <h3 className="text-lg font-bold mt-2">{step.title}</h3>
-              <p className="text-muted-foreground text-center">{step.description}</p>
+              <h3 className="text-xl font-bold mt-2">{step.title}</h3>
+                <p className="text-muted-foreground text-center">{step.description}</p>
+              </div>
             </div>
           </div>
-          ))}
         </div>
       </section>
 
@@ -291,10 +283,10 @@ const FloorLeveling = () => {
                 <Shield className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold mt-2">{benefit.title}</h3>
-              <p className="text-muted-foreground text-center">{benefit.description}</p>
+                <p className="text-muted-foreground text-center">{benefit.description}</p>
+              </div>
             </div>
           </div>
-          ))}
         </div>
       </section>
 
@@ -309,7 +301,7 @@ const FloorLeveling = () => {
         
         <div className="rounded-lg overflow-hidden shadow-xl">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524650.378015946!2d-81.5!3d28.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7738a8b5c7f%3A0x4b8c5e5b5c5c5c!2sCentral%20Florida%2C%20FL!5e0!3m2!1sen!2sus!4v1629234567890!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524650.378015946!2d-81.5!3d28.5!2m3!1f0!2f0!3f0!3m2!1s0x88e7738a8b5c7f%3A0x4b8c5e5b5c5c5c!2sCentral%20Florida%2C%20FL!5e0!3m2!1sen!2sus!4v1629234567890!5m2!1sen!2sus"
             width="100%"
             height="500"
             style={{ border: 0 }}
@@ -325,7 +317,7 @@ const FloorLeveling = () => {
           <div>
             <CardContent className="pt-6 text-center">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <div className="w-6 h-6 border-2 border-primary rounded-full"></div>
+                <div className="w-6 h-12 rounded-full bg-primary/10"></div>
               </div>
               <h3 className="font-semibold mb-2">Service Area</h3>
               <p className="text-sm text-muted-foreground">Complete coverage of Central Florida</p>
@@ -333,7 +325,7 @@ const FloorLeveling = () => {
           </Card>
           <CardContent className="pt-6 text-center">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <div className="w-6 h-6 border-2 border-primary rounded-full"></div>
+                <div className="w-6 h-12 rounded-full"></div>
               </div>
               <h3 className="font-semibold mb-2">Response Time</h3>
               <p className="text-sm text-muted-foreground">Typically within 24 hours</p>
@@ -341,12 +333,13 @@ const FloorLeveling = () => {
           </Card>
           <CardContent className="pt-6 text-center">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <div className="w-6 h-6 border-2 border-primary rounded-full"></div>
+                <div className="w-6 h-12 rounded-full"></div>
               </div>
               <h3 className="font-semibold mb-2">Free Estimates</h3>
               <p className="text-sm text-muted-foreground">Call for a no-obligation quote</p>
             </CardContent>
           </Card>
+          </div>
         </div>
       </section>
 
@@ -363,10 +356,11 @@ const FloorLeveling = () => {
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6">
               <div className="flex items-center mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
-                ))}
-              </div>
+                <div className="flex items-center mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
+                  ))}
+                </div>
               <div className="flex-grow mb-4">
                 <Quote className="h-8 w-8 text-primary/20 mb-2" />
                 <p className="text-muted-foreground italic">"{testimonial.text}"</p>
@@ -376,8 +370,11 @@ const FloorLeveling = () => {
                 <p className="text-sm text-muted-foreground">{testimonial.city}</p>
               </div>
             </div>
+          </Card>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="section-container py-20">
@@ -395,7 +392,7 @@ const FloorLeveling = () => {
                 <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
                 <p className="text-muted-foreground">{faq.answer}</p>
               </CardContent>
-            </Card>
+          </Card>
           ))}
         </div>
       </section>
@@ -409,7 +406,7 @@ const FloorLeveling = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+1 (386) 453-9277">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 gap-2 font-semibold px-8 py-3 text-lg">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3 text-lg">
                 <Phone className="h-5 w-5" />
                 Call Us Now
               </Button>
