@@ -2,8 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Phone, AlertTriangle, Wrench, Shield, Clock, Users, Award, Star, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { motion } from "framer-motion";
 
 const FloorLeveling = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -128,7 +126,7 @@ const FloorLeveling = () => {
     },
     {
       question: "How long does floor leveling take?",
-      answer: "Most standard floor leveling jobs can be completed in 4-6 hours. Complex projects requiring foundation work may take 1-2 days, depending on the extent of the issues."
+      answer: "Most standard floor leveling jobs can be completed in 4-6 hours. Complex projects requiring foundation work may take 1-2 days, depending on the extent of the damage."
     },
     {
       question: "Is floor leveling covered by insurance?",
@@ -159,11 +157,7 @@ const FloorLeveling = () => {
         </div>
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center text-white px-4 max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="mb-6">
               <Wrench className="h-16 w-16 mx-auto mb-6" />
               <h1 className="mb-6 text-5xl md:text-6xl font-bold">Floor Leveling & Sagging Correction</h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
@@ -182,7 +176,7 @@ const FloorLeveling = () => {
                   </Button>
                 </Link>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -197,14 +191,6 @@ const FloorLeveling = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-96 rounded-lg overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=600" 
-              alt="Floor Leveling Process" 
-              className="w-full h-full object-cover"
-              onError={(e) => handleImageError(e, "https://picsum.photos/seed/floorprocess/600/400.jpg")}
-            />
-          </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">Why Choose Our Floor Leveling Services?</h3>
             <ul className="space-y-3 text-lg">
@@ -226,6 +212,14 @@ const FloorLeveling = () => {
               </li>
             </ul>
           </div>
+          <div className="relative h-96 rounded-lg overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=600" 
+              alt="Floor Leveling Process" 
+              className="w-full h-full object-cover"
+              onError={(e) => handleImageError(e, "https://picsum.photos/seed/floorprocess/600/400.jpg")}
+            />
+          </div>
         </div>
       </section>
 
@@ -240,57 +234,43 @@ const FloorLeveling = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {floorIssues.map((issue, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="h-full hover:shadow-lg transition-all duration-300">
-                <CardContent className="pt-6">
-                  <div className="flex items-center mb-4">
-                    <AlertTriangle className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-center">{issue.title}</h3>
-                  <p className="text-muted-foreground text-center">{issue.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
+            <div key={index} className="flex items-start gap-3 bg-background p-4 rounded-lg">
+              <AlertTriangle className="h-8 w-8 text-primary" />
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-center">{issue.title}</h3>
+                <p className="text-muted-foreground text-center">{issue.description}</p>
+              </div>
+            </div>
           ))}
+        </div>
+        
+        <div className="text-center">
+          <p className="text-muted-foreground mb-4">Don't see your issue listed? Contact us for a comprehensive floor assessment.</p>
+          <Link to="/contact">
+            <Button variant="outline">Schedule Floor Inspection</Button>
+          </Link>
         </div>
       </section>
 
       {/* Our Process Section */}
       <section className="section-container py-20">
         <div className="text-center mb-12">
-          <h2 className="mb-6 text-3xl font-bold">Our Floor Leveling Process</h2>
+          <h2 className="mb-4 text-3xl font-bold">Our Floor Leveling Process</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our systematic approach ensures lasting results by addressing both symptoms and underlying causes.
+            Our systematic approach ensures lasting results by addressing both the symptoms and the underlying causes.
           </p>
         </div>
         
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           {process.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="h-full hover:shadow-lg transition-all duration-300">
-                <CardContent className="pt-6">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-primary text-white font-bold text-xl flex items-center justify-center">
-                      {step.step}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-center">{step.title}</h3>
-                  <p className="text-muted-foreground text-center">{step.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
+            <div key={index} className="text-center">
+              <div className="w-12 h-12 rounded-full bg-primary text-white font-bold text-xl flex items-center justify-center">
+                {step.step}
+              </div>
+              <h3 className="text-lg font-bold mt-2">{step.title}</h3>
+              <p className="text-muted-foreground text-center">{step.description}</p>
+            </div>
+          </div>
           ))}
         </div>
       </section>
@@ -298,7 +278,7 @@ const FloorLeveling = () => {
       {/* Benefits Section */}
       <section className="section-container py-20">
         <div className="text-center mb-12">
-          <h2 className="mb-6 text-3xl font-bold">Benefits of Professional Floor Leveling</h2>
+          <h2 className="mb-4 text-3xl font-bold">Benefits of Professional Floor Leveling</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Beyond just fixing uneven floors, professional leveling provides numerous advantages for your mobile home.
           </p>
@@ -306,25 +286,14 @@ const FloorLeveling = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="h-full hover:shadow-lg transition-all duration-300">
-                <CardContent className="pt-6">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Shield className="h-6 w-6 text-primary" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-center">{benefit.title}</h3>
-                  <p className="text-muted-foreground text-center">{benefit.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
+            <div key={index} className="text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <Shield className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mt-2">{benefit.title}</h3>
+              <p className="text-muted-foreground text-center">{benefit.description}</p>
+            </div>
+          </div>
           ))}
         </div>
       </section>
@@ -340,7 +309,7 @@ const FloorLeveling = () => {
         
         <div className="rounded-lg overflow-hidden shadow-xl">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524650.378015946!2d-81.5!3d28.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7738a8b5c7c7f%3A0x4b8c5e5b5c5c5c!2sCentral%20Florida%2C%20FL!5e0!3m2!1sen!2sus!4v1629234567890!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524650.378015946!2d-81.5!3d28.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7738a8b5c7f%3A0x4b8c5e5b5c5c5c!2sCentral%20Florida%2C%20FL!5e0!3m2!1sen!2sus!4v1629234567890!5m2!1sen!2sus"
             width="100%"
             height="500"
             style={{ border: 0 }}
@@ -353,28 +322,26 @@ const FloorLeveling = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Card>
+          <div>
             <CardContent className="pt-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                 <div className="w-6 h-6 border-2 border-primary rounded-full"></div>
               </div>
               <h3 className="font-semibold mb-2">Service Area</h3>
               <p className="text-sm text-muted-foreground">Complete coverage of Central Florida</p>
             </CardContent>
           </Card>
-          <Card>
-            <CardContent className="pt-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-6 w-6 text-primary" />
+          <CardContent className="pt-6 text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="w-6 h-6 border-2 border-primary rounded-full"></div>
               </div>
               <h3 className="font-semibold mb-2">Response Time</h3>
               <p className="text-sm text-muted-foreground">Typically within 24 hours</p>
             </CardContent>
           </Card>
-          <Card>
-            <CardContent className="pt-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Phone className="h-6 w-6 text-primary" />
+          <CardContent className="pt-6 text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="w-6 h-6 border-2 border-primary rounded-full"></div>
               </div>
               <h3 className="font-semibold mb-2">Free Estimates</h3>
               <p className="text-sm text-muted-foreground">Call for a no-obligation quote</p>
@@ -394,34 +361,23 @@ const FloorLeveling = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="h-full hover:shadow-lg transition-all duration-300">
-                <CardContent className="pt-6 flex flex-col h-full">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
-                    ))}
-                  </div>
-                  <div className="flex-grow mb-4">
-                    <Quote className="h-8 w-8 text-primary/20 mb-2" />
-                    <p className="text-muted-foreground italic">"{testimonial.text}"</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.city}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+            <div key={index} className="bg-white rounded-lg shadow-lg p-6">
+              <div className="flex items-center mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
+                ))}
+              </div>
+              <div className="flex-grow mb-4">
+                <Quote className="h-8 w-8 text-primary/20 mb-2" />
+                <p className="text-muted-foreground italic">"{testimonial.text}"</p>
+              </div>
+              <div>
+                <p className="font-semibold">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.city}</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
       {/* FAQ Section */}
       <section className="section-container py-20">
@@ -434,7 +390,7 @@ const FloorLeveling = () => {
         
         <div className="max-w-3xl mx-auto">
           {faqs.map((faq, index) => (
-            <Card key={index} className="mb-4">
+            <div key={index} className="bg-white rounded-lg shadow-lg p-6">
               <CardContent className="pt-6">
                 <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
                 <p className="text-muted-foreground">{faq.answer}</p>
