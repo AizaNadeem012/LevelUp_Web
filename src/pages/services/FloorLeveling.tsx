@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Phone, AlertTriangle, Wrench, Shield, Clock, Users, Award, Star, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const FloorLeveling = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -212,6 +213,13 @@ const FloorLeveling = () => {
               </li>
             </ul>
           </div>
+          <div className="bg-slate-100 rounded-lg h-80 flex items-center justify-center overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=600" 
+              alt="Floor Leveling Process" 
+              className="w-full h-full object-cover"
+              onError={(e) => handleImageError(e, "https://picsum.photos/seed/floorlevelingprocess/600/400.jpg")}
+            />
           </div>
         </div>
       </section>
@@ -225,16 +233,15 @@ const FloorLeveling = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {floorIssues.map((issue, index) => (
-            <div key={index} className="flex items-start gap-3 bg-background p-4 rounded-lg">
-              <AlertTriangle className="h-8 w-8 text-primary" />
-              <div>
-                <h3 className="text-xl font-bold mb-2 text-center">{issue.title}</h3>
-                <p className="text-muted-foreground text-center">{issue.description}</p>
-              </div>
+            <div key={index} className="flex flex-col items-center text-center bg-background p-4 rounded-lg">
+              <AlertTriangle className="h-8 w-8 text-primary mb-3" />
+              <h3 className="text-lg font-bold mb-2">{issue.title}</h3>
+              <p className="text-muted-foreground text-sm">{issue.description}</p>
             </div>
-          </div>
+          ))}
+        </div>
         
         <div className="text-center">
           <p className="text-muted-foreground mb-4">Don't see your issue listed? Contact us for a comprehensive floor assessment.</p>
@@ -256,14 +263,13 @@ const FloorLeveling = () => {
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           {process.map((step, index) => (
             <div key={index} className="text-center">
-              <div className="w-12 h-12 rounded-full bg-primary text-white font-bold text-xl flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-primary text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">
                 {step.step}
               </div>
-              <h3 className="text-xl font-bold mt-2">{step.title}</h3>
-                <p className="text-muted-foreground text-center">{step.description}</p>
-              </div>
+              <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+              <p className="text-muted-foreground">{step.description}</p>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -279,14 +285,13 @@ const FloorLeveling = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {benefits.map((benefit, index) => (
             <div key={index} className="text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Shield className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mt-2">{benefit.title}</h3>
-                <p className="text-muted-foreground text-center">{benefit.description}</p>
-              </div>
+              <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+              <p className="text-muted-foreground">{benefit.description}</p>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -299,7 +304,7 @@ const FloorLeveling = () => {
           </p>
         </div>
         
-        <div className="rounded-lg overflow-hidden shadow-xl">
+        <div className="rounded-lg overflow-hidden shadow-xl mb-8">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524650.378015946!2d-81.5!3d28.5!2m3!1f0!2f0!3f0!3m2!1s0x88e7738a8b5c7f%3A0x4b8c5e5b5c5c5c!2sCentral%20Florida%2C%20FL!5e0!3m2!1sen!2sus!4v1629234567890!5m2!1sen!2sus"
             width="100%"
@@ -313,33 +318,34 @@ const FloorLeveling = () => {
           ></iframe>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <div>
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card>
             <CardContent className="pt-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <div className="w-6 h-12 rounded-full bg-primary/10"></div>
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <div className="w-6 h-6 rounded-full bg-primary"></div>
               </div>
               <h3 className="font-semibold mb-2">Service Area</h3>
               <p className="text-sm text-muted-foreground">Complete coverage of Central Florida</p>
             </CardContent>
           </Card>
-          <CardContent className="pt-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <div className="w-6 h-12 rounded-full"></div>
+          <Card>
+            <CardContent className="pt-6 text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-6 w-6 text-primary" />
               </div>
               <h3 className="font-semibold mb-2">Response Time</h3>
               <p className="text-sm text-muted-foreground">Typically within 24 hours</p>
             </CardContent>
           </Card>
-          <CardContent className="pt-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <div className="w-6 h-12 rounded-full"></div>
+          <Card>
+            <CardContent className="pt-6 text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Users className="h-6 w-6 text-primary" />
               </div>
               <h3 className="font-semibold mb-2">Free Estimates</h3>
               <p className="text-sm text-muted-foreground">Call for a no-obligation quote</p>
             </CardContent>
           </Card>
-          </div>
         </div>
       </section>
 
@@ -354,25 +360,24 @@ const FloorLeveling = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-6">
-              <div className="flex items-center mb-4">
+            <Card key={index} className="bg-white rounded-lg shadow-lg">
+              <CardContent className="pt-6">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
                   ))}
                 </div>
-              <div className="flex-grow mb-4">
-                <Quote className="h-8 w-8 text-primary/20 mb-2" />
-                <p className="text-muted-foreground italic">"{testimonial.text}"</p>
-              </div>
-              <div>
-                <p className="font-semibold">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.city}</p>
-              </div>
-            </div>
-          </Card>
-            </div>
-          </div>
+                <div className="flex-grow mb-4">
+                  <Quote className="h-8 w-8 text-primary/20 mb-2" />
+                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
+                </div>
+                <div>
+                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.city}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
@@ -387,12 +392,12 @@ const FloorLeveling = () => {
         
         <div className="max-w-3xl mx-auto">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-6">
+            <Card key={index} className="mb-4">
               <CardContent className="pt-6">
                 <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
                 <p className="text-muted-foreground">{faq.answer}</p>
               </CardContent>
-          </Card>
+            </Card>
           ))}
         </div>
       </section>
