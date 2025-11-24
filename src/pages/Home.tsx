@@ -755,7 +755,7 @@ const Home = () => {
               receives the highest standard of service.
             </p>
             <Link to="/about">
-              <Button variant="outline" className="px-6 py-3 rounded-xl">
+              <Button className="px-6 py-3 rounded-xl">
                 View All Credentials <ChevronRight className="h-4 w-4 ml-1" />
               </Button>
             </Link>
@@ -972,7 +972,7 @@ const Home = () => {
           </div>
           <div className="text-center">
             <Link to="/resources">
-              <Button variant="outline" className="px-8 py-3 rounded-xl">
+              <Button className="px-8 py-3 rounded-xl">
                 View All Resources <BookOpen className="h-4 w-4 ml-2" />
               </Button>
             </Link>
@@ -1121,7 +1121,7 @@ const Home = () => {
 
           <div className="text-center mt-10">
             <Link to="/blog">
-              <Button variant="outline" className="px-8 py-3 rounded-xl">
+              <Button className="px-8 py-3 rounded-xl">
                 View All Resources
               </Button>
             </Link>

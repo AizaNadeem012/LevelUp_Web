@@ -219,7 +219,7 @@ const SumterCounty = () => {
         <div className="text-center">
           <p className="text-muted-foreground mb-4">Don't see your city listed? We still serve you!</p>
           <Link to="/contact">
-            <Button variant="outline">Contact Us to Confirm Service Area</Button>
+            <Button >Contact Us to Confirm Service Area</Button>
           </Link>
         </div>
       </section>

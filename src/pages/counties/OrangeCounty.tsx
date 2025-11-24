@@ -138,7 +138,7 @@ const OrangeCounty = () => {
                   </Button>
                 </a>
                 <Link to="/contact">
-                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
+                  <Button size="lg" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
                     Get Free Estimate
                   </Button>
                 </Link>
@@ -210,7 +210,7 @@ const OrangeCounty = () => {
         <div className="text-center">
           <p className="text-muted-foreground mb-4">Don't see your city listed? We still serve you!</p>
           <Link to="/contact">
-            <Button variant="outline">Contact Us to Confirm Service Area</Button>
+            <Button>Contact Us to Confirm Service Area</Button>
           </Link>
         </div>
       </section>
@@ -557,7 +557,7 @@ const OrangeCounty = () => {
               </Button>
             </a>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
+              <Button size="lg" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
                 Request Free Estimate
               </Button>
             </Link>

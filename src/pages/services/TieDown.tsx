@@ -683,7 +683,7 @@ const TieDown = () => {
               </Button>
             </a>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary shadow-lg">
+              <Button size="lg"  className="border-2 border-white text-white hover:bg-white hover:text-primary shadow-lg">
                 Request Free Estimate
               </Button>
             </Link>

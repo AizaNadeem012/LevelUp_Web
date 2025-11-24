@@ -172,7 +172,7 @@ const FloorLeveling = () => {
                   </Button>
                 </a>
                 <Link to="/contact">
-                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
+                  <Button size="lg" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
                     Get Free Estimate
                   </Button>
                 </Link>
@@ -417,7 +417,7 @@ const FloorLeveling = () => {
               </Button>
             </a>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
+              <Button size="lg" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
                 Request Free Estimate
               </Button>
             </Link>

@@ -121,9 +121,9 @@ const Header = () => {
               </SocialIcon>
             </div>
             <a href="tel:+16892730135">
-              <Button variant="outline" size="sm" className="gap-2">
+              <Button size="sm" className="gap-2">
                 <Phone className="h-4 w-4" />
-                (689) 273-0135
+                +1 (386) 453-9277
               </Button>
             </a>
             <Link to="/contact">

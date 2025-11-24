@@ -117,7 +117,7 @@ const HillsboroughCounty = () => {
             src="/images/hillsborough-county-hero.jpg" 
             alt="Hillsborough County" 
             className="w-full h-full object-cover"
-            onError={(e) => handleImageError(e, "https://picsum.photos/seed/hillsboroughcounty/1920/600.jpg")}
+            onError={(e) => handleImageError(e, "https://upload.wikimedia.org/wikipedia/commons/b/bf/Downtown_Tampa%2C_Florida.jpg")}
           />
         </div>
         <div className="absolute inset-0 flex items-center justify-center z-20">
@@ -140,7 +140,7 @@ const HillsboroughCounty = () => {
                   </Button>
                 </a>
                 <Link to="/contact">
-                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
+                  <Button size="lg" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
                     Get Free Estimate
                   </Button>
                 </Link>
@@ -175,7 +175,7 @@ const HillsboroughCounty = () => {
               src="/images/hillsborough-county-landscape.jpg" 
               alt="Hillsborough County Landscape" 
               className="w-full h-full object-cover"
-              onError={(e) => handleImageError(e, "https://picsum.photos/seed/hillsboroughlandscape/600/400.jpg")}
+              onError={(e) => handleImageError(e, "https://pohcdn.com/sites/default/files/styles/node__blog_post__bp_banner__blog_post_banner/public/2022-02/tampa.jpg")}
             />
           </div>
         </div>
@@ -212,7 +212,7 @@ const HillsboroughCounty = () => {
         <div className="text-center">
           <p className="text-muted-foreground mb-4">Don't see your city listed? We still serve you!</p>
           <Link to="/contact">
-            <Button variant="outline">Contact Us to Confirm Service Area</Button>
+            <Button>Contact Us to Confirm Service Area</Button>
           </Link>
         </div>
       </section>
@@ -559,7 +559,7 @@ const HillsboroughCounty = () => {
               </Button>
             </a>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
+              <Button size="lg" className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg">
                 Request Free Estimate
               </Button>
             </Link>

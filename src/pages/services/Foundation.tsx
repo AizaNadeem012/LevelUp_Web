@@ -16,7 +16,7 @@ const Foundation = () => {
           <p className="text-xl max-w-3xl mx-auto mb-8">Expert mobile home foundation repair and pier installation for long-lasting structural integrity.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+1 (386) 453-9277"><Button size="lg" className="bg-white text-primary hover:bg-white/90 gap-2"><Phone className="h-5 w-5" />+1 (386) 453-9277</Button></a>
-            <Link to="/contact"><Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary">Get Free Estimate</Button></Link>
+            <Link to="/contact"><Button size="lg"  className="border-2 border-white text-white hover:bg-white hover:text-primary">Get Free Estimate</Button></Link>
           </div>
         </div>
       </section>
