@@ -348,8 +348,7 @@ const Home = () => {
               </h1>
 
               <p className="max-w-2xl text-lg md:text-xl opacity-95 mb-8">
-                Leveling • Anchoring • Skirting • Retrofitting • Crawl Space • Foundation — handled with precision,
-                speed, and unmatched safety standards.
+                Licensed, insured, and delivering fast, reliable mobile home leveling, hurricane anchoring, and foundation repair across all of Central Florida.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
