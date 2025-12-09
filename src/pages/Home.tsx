@@ -344,7 +344,7 @@ const Home = () => {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
-                Florida's Premium Mobile & Manufactured Home Contractors
+              Truly Level Mobile Home Leveling & Anchoring – Central Florida’s Trusted Experts
               </h1>
 
               <p className="max-w-2xl text-lg md:text-xl opacity-95 mb-8">
