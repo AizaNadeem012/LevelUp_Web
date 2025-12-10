@@ -120,10 +120,10 @@ const Header = () => {
                 </svg>
               </SocialIcon>
             </div>
-            <a href="tel:+16892730135">
+            <a href="tel:+1 (689) 340-5795‬">
               <Button size="sm" className="gap-2">
                 <Phone className="h-4 w-4" />
-                +1 (386) 453-9277
+                +1 (689) 340-5795‬
               </Button>
             </a>
             <Link to="/contact">
