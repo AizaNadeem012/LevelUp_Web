@@ -140,7 +140,7 @@ const SumterCounty = () => {
                 Specialized mobile home services for The Villages and all Sumter County communities
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+1 (386) 453-9277">
+                <a href="tel:+1 (689) 340-5795‬">
                   <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3 text-lg gap-2">
                     <Phone className="h-5 w-5" />
                     Call Us Now
@@ -559,7 +559,7 @@ const SumterCounty = () => {
             Contact us today for a free, no-obligation estimate for your mobile home service needs in Sumter County.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+1 (386) 453-9277">
+            <a href="tel:+1 (689) 340-5795‬">
               <Button size="lg" className="bg-white text-primary hover:bg-white/90 gap-2 font-semibold px-8 py-3 text-lg">
                 <Phone className="h-5 w-5" />
                 Call Us Now
